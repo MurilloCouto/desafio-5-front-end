@@ -38,6 +38,8 @@ const LivrosEdicao = () => {
       await LivrosService.updateLivro(Number(livro.id), body)
         .then((response) => {
           alert("Livro editado com sucesso!");
+
+          setLivro(response.data);
         })
         .catch(({ response: { data, status } }) => {
           alert(`${status} - ${data}`);

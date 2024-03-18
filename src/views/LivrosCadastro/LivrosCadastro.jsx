@@ -3,6 +3,7 @@ import Header from "../../components/Header/Header";
 import "./index.scss";
 import SubmenuLivros from "../../components/SubmenuLivros/SubmenuLivros";
 import { LivrosService } from "../../api/LivrosService";
+import { Link } from "react-router-dom";
 
 const LivrosCadastro = () => {
   const [livro, setLivro] = useState([]);
@@ -102,13 +103,15 @@ const LivrosCadastro = () => {
               ></input>
             </div>
             <div className="form-group">
-              <button
-                onClick={() => {
-                  createLivro();
-                }}
-              >
-                Cadastrar Livro
-              </button>
+              <Link to={`/livros`}>
+                <button
+                  onClick={() => {
+                    createLivro();
+                  }}
+                >
+                  Cadastrar Livro
+                </button>
+              </Link>
             </div>
           </form>
         </div>
